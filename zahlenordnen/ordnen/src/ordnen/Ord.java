@@ -12,16 +12,17 @@ public class Ord {
 		
 		for (int a=0;a<=9;a++)
 		{
-		for (int i=0;i<=8;i++)
-		{
-			if(zahl.get(i)>zahl.get(i+1))
+			for (int i=0;i<=8;i++)
 			{
+				if(zahl.get(i)>zahl.get(i+1))
+			
+				{
 				z=zahl.get(i);
 				z2=zahl.get(i+1);
 				zahl.set(i+1,z);
 				zahl.set(i,z2);
+				}
 			}
-		}
 		}
 		return zahl;
 	}
