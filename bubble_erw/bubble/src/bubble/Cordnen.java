@@ -5,8 +5,24 @@ import java.util.Random;
 
 public class Cordnen 
 {
+	
+	public static ArrayList<Integer> getRandomList(int size)
+	{
+		Random r=new Random();
+		ArrayList<Integer> zahlen=new ArrayList<Integer>();
+		for(int i=0;i<size;i++)
+		{
+			zahlen.add(r.nextInt(50));
+		}
+		return zahlen;
+	}
+	
+	
+	
 	public static ArrayList<Integer> zahlenvergleichen(ArrayList<Integer> zahl)
 	{
+		long startTime=System.nanoTime();
+		
 		int z;
 		int z2;
 		int wert=zahl.size()-1;
@@ -32,7 +48,8 @@ public class Cordnen
 				}
 				
 			}
-		}
+		}long stopTime=System.nanoTime();
+		System.out.println(stopTime-startTime);
 		return zahl;
 	}
 
@@ -51,6 +68,8 @@ public class Cordnen
 		zahlenvergleichen(zahlen);
 		
 		System.out.println(zahlen);
+		System.out.println(getRandomList(4));
+		
 	}
 
 }
