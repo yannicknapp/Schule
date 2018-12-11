@@ -1,3 +1,4 @@
+package pack;
 
 public class LinkedList <T> 
 {
@@ -14,8 +15,8 @@ public class LinkedList <T>
 		//list empty
 		if(head==null)
 		{
-			tail=note;
 			head=note;
+			tail=note;
 			return;
 		}
 		
@@ -81,7 +82,7 @@ public class LinkedList <T>
 	public T getBack(int p)
 	{
 		Note<T> tmp=tail;
-		for(int i=p-1;i>=0;i--)
+		for(int i=0;i<p;i++)
 		{
 			tmp=tmp.getPrevious();
 		}
@@ -96,25 +97,31 @@ public class LinkedList <T>
 	{
 		Note<T> a=head;
 		Note<T> b=head;
-		Note<T> c=tail;
-		Note<T> d=tail;
+		if(p==0)
+		{
+			head=head.getNext();
+			tail=tail.getPrevious();
+		}else
+		{
 		for(int i=0;i<p-1;i++)
 		{
 			
 			a=a.getNext();
-			c=c.getPrevious();
+			
 			
 		}
+		Note<T> c=tail;
 		for(int i=0;i<p;i++)
 		{
 			
 			b=b.getNext();
-			d=d.getPrevious();
+			
 			
 		}
+		Note<T> d=tail;
 		a.setNext(b.getNext());
 		c.setPrevious(d.getPrevious());
-		
+		}
 		
 	}
 	
