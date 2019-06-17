@@ -1,0 +1,47 @@
+<style>
+#p{
+  width:180px;  
+      height:100px;  
+      position:absolute;  
+      left:50%;  
+      top:50%;  
+      margin:-50px 0 0 -90px;  
+}
+
+#d{
+  width:500px;  
+      height:10px; 
+      position: absolute;   
+      left:40%;  
+      top:37%;   
+}
+
+#g{
+  background: url(//s1.1zoom.me/b5050/359/School_Stationery_Colored_background_Pencils_552121_1440x900.jpg) repeat-x;
+}
+
+</style>
+
+<body id="g">
+
+
+
+<div id="p">
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Email:</label>
+            <input type="text" name="username" class="form-control" value="" />
+        </p>
+        <p>
+            <label>Passwort:</label>
+            <input type="text" name="password" type="password" class="form-control" value=""/>
+        </p>
+        <button type="submit" class="btnSubmit" value="login">Login </button>
+
+    </form>
+</div>
+
+
+
+</body>

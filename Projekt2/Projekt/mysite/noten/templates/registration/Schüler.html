@@ -1,0 +1,65 @@
+﻿<script>
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/dominikgapp/Desktop/Projekt/mysite/db.sqlite3'
+</script>
+
+
+
+
+
+
+
+<head>
+    <title>Schüler</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+
+    #f {
+        position: absolute;
+        left: 45%;
+        top: 20%;
+    }
+
+
+    #g {
+        position: absolute;
+        left: 40%;
+        top: 10%;
+    }
+
+    #h {
+        background-color: cadetblue;
+    }
+</style>
+<body id="h">
+    <div id="g">
+        <h4>Willkommen auf Knagap!</h4>
+        <h5>Hier ist eine Übersicht Ihrer Noten.</h5>
+    </div>
+    <div id="f">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Fach</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in noten %}
+                <tr>
+                    <td>{{a.subject}}</td>
+                    <td>{{a.grade}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</body>

@@ -1,0 +1,100 @@
+﻿
+<html>
+<head>
+  <title>Lehrer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+
+#f{  
+      position:absolute;  
+      left:45%;  
+      top:20%; 
+        
+}
+
+
+#g{
+  position: absolute;
+  left: 40%;
+  top: 10%;
+}
+
+#h{
+  background-color:cadetblue;
+}
+
+</style>
+
+<body id="h">
+
+<h5>Wilkommen auf Knagap, Sie sind als Lehrer angemeldet!</h5>
+<h6>Sie können hier die Noten Ihrer Schüler eingeben bzw. abändern!</h6>
+</br> 
+
+<p>Vorname des gewünschten Schülers:</p>
+
+<form method="post" action="/noten/Lehrer/">
+    {% csrf_token %}
+    <input style="position:absolute; top:15%; left:5%; width:15%;" type="text" name="email" />
+    </br>
+    </br>
+
+    <p style="position:absolute; top:45%; left:5%;">Geben Sie die Noten des Schülers ein!</p>
+    </div>
+    <div style="position:absolute; top:50%;">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Fach</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="fach" class="form-control" value="" /></td>
+                    <td><input type="text" name="note" class="form-control" value=" " /></td>
+                    <td><button type="submit" class="btnSubmit" value="senden">Senden</button></td>
+
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+  <div class="container" style="position:absolute; left:80%; top:5%;">
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hilfe</button>
+    
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Noten richtig eingeben:</h4>
+            </div>
+            <div class="modal-body">
+              <p>Geben Sie Vor- und Nachname des gewünschten Schülers ein und drücken Sie anschließend auf "Senden"</p><br/> 
+              <p>Geben Sie anschließend eine Note ein und drücken Sie auf den daneben stehenden Button "Senden".</p>
+              <p>Wiederholden Sie diesen Vorgang bei allen Noten</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+          <br/> 
+        </div>
+
+
+
+</body>
+</form>
+</html>
